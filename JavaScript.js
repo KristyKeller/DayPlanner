@@ -1,7 +1,8 @@
 //get current day link to inner HTML to show on top of screen
+currentDay 
+moment().format('llll');
 
-
-// color code timeblocks for hours; look into for loops per time
+// color code time blocks for hours; look into for loops per time
 
 
 // class with .past, .present, .future 
