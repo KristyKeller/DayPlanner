@@ -1,6 +1,8 @@
 // //get current day link to inner HTML to show on top of screen
-// id="currentDay" class="lead"> 
-// moment().format('LLLL');
+
+
+var today = moment().format('LLLL');
+$("#currentDay").text(today);
 
 // color code time blocks for hours; look into for loops per time
 
