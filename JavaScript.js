@@ -1,7 +1,7 @@
 
 // //get current day link to inner HTML to show on top of screen
 
-var today = moment().format('LL');
+var today = moment().format('LLL');
 $("#currentDay").text(today);
 
 // moment().format('LT');
@@ -12,14 +12,14 @@ $("#currentDay").text(today);
 
 // make save button works via onclick 
 // save to local storage as apart of save button function
-var savedNotes = [];
+var savedNotes = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
 
 $(".saveBtn").on("click", function (event) {
     event.preventDefault();
     console.log("save");
-    [{ time: 9, text: "textatea1" }, { time: 10, text: "textarea2" }, { time: 11, text: "textarea3" }, { time: 12, text: "textarea4" }, { time: 13, text: "textarea5" }, { time: 14, text: "textarea6" }, { time: 15, text: "textarea7" }, { time: 16, text: "textarea8" }, { time: 17, text: "textarea9" }];
+    [{ time: 9, text: "textarea1" }, { time: 10, text: "textarea2" }, { time: 11, text: "textarea3" }, { time: 12, text: "textarea4" }, { time: 13, text: "textarea5" }, { time: 14, text: "textarea6" }, { time: 15, text: "textarea7" }, { time: 16, text: "textarea8" }, { time: 17, text: "textarea9" }];
 
-    localStorage.setItem("save", savedNotes);
+    localStorage.setItem("save", JSON.stringify(savedNotes));
 });
 
 //json string in 
