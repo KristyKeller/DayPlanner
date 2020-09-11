@@ -4,6 +4,8 @@
 var today = moment().format('LL');
 $("#currentDay").text(today);
 
+// moment().format('LT');
+
 // color code time blocks for hours; look into for loops per time
 // class with .past, .present, .future 
 // grab mil time    if past, apply past class
@@ -12,22 +14,16 @@ $("#currentDay").text(today);
 // save to local storage as apart of save button function
 var savedNotes = [];
 
-$(".saveBtn").on("click",function(event) {
+$(".saveBtn").on("click", function (event) {
     event.preventDefault();
-   console.log("save");
+    console.log("save");
+    [{ time: 9, text: "textatea1" }, { time: 10, text: "textarea2" }, { time: 11, text: "textarea3" }, { time: 12, text: "textarea4" }, { time: 13, text: "textarea5" }, { time: 14, text: "textarea6" }, { time: 15, text: "textarea7" }, { time: 16, text: "textarea8" }, { time: 17, text: "textarea9" }];
 
-localStorage.setItem("save","click"); 
+    localStorage.setItem("save", savedNotes);
 });
-
-
-
-
 
 //json string in 
 //json 
-
-
-// how do I add this? .saveBtn i:hover...style= display:none;?
 // each jQuery to loop to go through results .each textarea 
 
 // find a way to load local storage to add to html 
