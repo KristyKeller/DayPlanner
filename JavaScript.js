@@ -24,30 +24,9 @@ $(".saveBtn").on("click", function (event) {
 
 
 //  time blocks for past, present, and future
-$(".hour").attr(function( index, element ) {
-    // element == this
-    $( element ).css( ".present", ".past", ".future");
-    if ( $( this ).is( "hour" ) ) {
-    }
-  });
 
 
 // present
 
 var presentTime = moment().format('LT');
 console.log(presentTime)
-$(".present").addClass("hour"); 
-
-$(".hour").format(function(){ 
-    $("hour").css( "present", "past", "future" );
-    });
-
-// past 
-var pastTime = moment().format('LT');
-console.log(pastTime)
-$(".past").addClass("hour"); 
-
-// future
-var futureTime = moment().format('LT');
-console.log(pastTime)
-$(".future").addClass("hour"); 
