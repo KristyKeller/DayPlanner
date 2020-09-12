@@ -6,16 +6,29 @@ $("#currentDay").text(today);
 
 
 // save to local storage
-var savedNotes = [];
+var savedNotes = JSON.parse(localStorage.getItem("save")) || [];
 
 $(".saveBtn").on("click", function (event) {
     event.preventDefault();
     console.log("save");
-    savedNotes = [{ time: 9, text: "textarea1" }, { time: 10, text: "textarea2" }, { time: 11, text: "textarea3" }, { time: 12, text: "textarea4" }, { time: 13, text: "textarea5" }, { time: 14, text: "textarea6" }, { time: 15, text: "textarea7" }, { time: 16, text: "textarea8" }, { time: 17, text: "textarea9" }];
+    var textArea = $(this).parent().find("textarea.textarea").val()
+    var textAreaKey = $(this).parent().find("textarea.textarea").attr("id")
+    var notes = {}
+    notes[textAreaKey] = textArea
+    savedNotes.push(notes)
+    console.log(savedNotes)
 
-    localStorage.setItem("save", JSON.stringify(savedNotes));
+     localStorage.setItem("save", JSON.stringify(savedNotes));
 });
 
+
+for (var i = 0; i < savedNotes.length; i++){
+   var currentKey = localStorage.getItem(localStorage.key(i))
+   console.log(currentKey)
+    var currentVal = localStorage.getItem(currentKey);
+    console.log(currentVal)
+   $(`#${currentKey}`).val(currentVal);
+}
 
 //  time blocks for past, present, and future
 // $( "hour" ).each(function( index, element ) {
@@ -28,30 +41,19 @@ $(".saveBtn").on("click", function (event) {
 //  for loops per time
 // present
 
-var presentTime = moment().format('LT');
-console.log(presentTime)
-$(".present").addClass("time"); 
+// var presentTime = moment().format('LT');
+// console.log(presentTime)
+// $(".present").addClass("time"); 
 
-// for (let i = 0; i < presentTime.length; i++) {
-//     console.log( presentTime[i]);
+// // for (let i = 0; i < presentTime.length; i++) {
+// //     console.log( presentTime[i]);
 
-// past 
-var pastTime = moment().format('LT');
-console.log(pastTime)
-$(".past").addClass("time"); 
+// // past 
+// var pastTime = moment().format('LT');
+// console.log(pastTime)
+// $(".past").addClass("time"); 
 
-// future
-var futureTime = moment().format('LT');
-console.log(pastTime)
-$(".future").addClass("time"); 
-
-
-// }
-// for (let i = 0; i < pastTime.length; i++) {
-//     console.log( presentTime[i]);
-// }
-// for (let i = 0; i < futureTime.length; i++) {
-//     console.log( presentTime[i]);
-// }
-
-// call localStorage and save once refreshed
+// // future
+// var futureTime = moment().format('LT');
+// console.log(pastTime)
+// $(".future").addClass("time"); 
