@@ -19,12 +19,14 @@ $(".saveBtn").on("click", function (event) {
     console.log(savedNotes)
 
 
-//     localStorage.setItem("save", JSON.stringify(savedNotes));
+    localStorage.setItem("save", JSON.stringify(savedNotes));
 });
 
 
-//  time blocks for past, present, and future
-
+// //  time blocks for past, present, and future
+// $( ".hour" ).each(function( index ) {
+//     console.log(savedNotes[i])
+//   });
 
 // present
 
