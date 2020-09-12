@@ -23,30 +23,30 @@ $(".saveBtn").on("click", function (event) {
 });
 
 
-//  time blocks for past, present, and future
-// $( "hour" ).each(function( index, element ) {
-//     // element == this
-//     $( element ).css( ".present", ".past", ".future");
-//     if ( $( this ).is( "time" ) ) {
-//     }
-//   });
+ time blocks for past, present, and future
+$( "hour" ).each(function( index, element ) {
+    // element == this
+    $( element ).css( ".present", ".past", ".future");
+    if ( $( this ).is( "time" ) ) {
+    }
+  });
 
-//  for loops per time
-// present
+ for loops per time
+present
 
-// var presentTime = moment().format('LT');
-// console.log(presentTime)
-// $(".present").addClass("time"); 
+var presentTime = moment().format('LT');
+console.log(presentTime)
+$(".present").addClass("time"); 
 
-// // for (let i = 0; i < presentTime.length; i++) {
-// //     console.log( presentTime[i]);
+// for (let i = 0; i < presentTime.length; i++) {
+//     console.log( presentTime[i]);
 
-// // past 
-// var pastTime = moment().format('LT');
-// console.log(pastTime)
-// $(".past").addClass("time"); 
+// past 
+var pastTime = moment().format('LT');
+console.log(pastTime)
+$(".past").addClass("time"); 
 
-// // future
-// var futureTime = moment().format('LT');
-// console.log(pastTime)
-// $(".future").addClass("time"); 
+// future
+var futureTime = moment().format('LT');
+console.log(pastTime)
+$(".future").addClass("time"); 
