@@ -6,29 +6,22 @@ $("#currentDay").text(today);
 
 
 // save to local storage
-var savedNotes = JSON.parse(localStorage.getItem("save")) || [];
+var savedNotes = [];
 
 $(".saveBtn").on("click", function (event) {
     event.preventDefault();
     console.log("save");
     var textArea = $(this).parent().find("textarea.textarea").val()
     var textAreaKey = $(this).parent().find("textarea.textarea").attr("id")
-    var notes = {}
-    notes[textAreaKey] = textArea
-    savedNotes.push(notes)
+
+     savedNotes = {};
+    savedNotes[textAreaKey] = textArea
     console.log(savedNotes)
 
-     localStorage.setItem("save", JSON.stringify(savedNotes));
+
+//     localStorage.setItem("save", JSON.stringify(savedNotes));
 });
 
-
-for (var i = 0; i < savedNotes.length; i++){
-   var currentKey = localStorage.getItem(localStorage.key(i))
-   console.log(currentKey)
-    var currentVal = localStorage.getItem(currentKey);
-    console.log(currentVal)
-   $(`#${currentKey}`).val(currentVal);
-}
 
 //  time blocks for past, present, and future
 // $( "hour" ).each(function( index, element ) {
