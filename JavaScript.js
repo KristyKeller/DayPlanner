@@ -23,7 +23,7 @@ $(".saveBtn").on("click", function (event) {
 });
 
 
- time blocks for past, present, and future
+//  time blocks for past, present, and future
 $( "hour" ).each(function( index, element ) {
     // element == this
     $( element ).css( ".present", ".past", ".future");
@@ -31,8 +31,8 @@ $( "hour" ).each(function( index, element ) {
     }
   });
 
- for loops per time
-present
+//  for loops per time
+// present
 
 var presentTime = moment().format('LT');
 console.log(presentTime)
