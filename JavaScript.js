@@ -24,29 +24,30 @@ $(".saveBtn").on("click", function (event) {
 
 
 //  time blocks for past, present, and future
-$( "hour" ).each(function( index, element ) {
+$(".hour").attr(function( index, element ) {
     // element == this
     $( element ).css( ".present", ".past", ".future");
-    if ( $( this ).is( "time" ) ) {
+    if ( $( this ).is( "hour" ) ) {
     }
   });
 
-//  for loops per time
+
 // present
 
 var presentTime = moment().format('LT');
 console.log(presentTime)
-$(".present").addClass("time"); 
+$(".present").addClass("hour"); 
 
-// for (let i = 0; i < presentTime.length; i++) {
-//     console.log( presentTime[i]);
+$(".hour").format(function(){ 
+    $("hour").css( "present", "past", "future" );
+    });
 
 // past 
 var pastTime = moment().format('LT');
 console.log(pastTime)
-$(".past").addClass("time"); 
+$(".past").addClass("hour"); 
 
 // future
 var futureTime = moment().format('LT');
 console.log(pastTime)
-$(".future").addClass("time"); 
+$(".future").addClass("hour"); 
