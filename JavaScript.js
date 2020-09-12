@@ -4,14 +4,8 @@
 var today = moment().format('LLL');
 $("#currentDay").text(today);
 
-// moment().format('LT');
 
-// color code time blocks for hours; look into for loops per time
-// class with .past, .present, .future 
-// grab mil time    if past, apply past class
-
-// make save button works via onclick 
-// save to local storage as apart of save button function
+// save to local storage
 var savedNotes = [];
 
 $(".saveBtn").on("click", function (event) {
@@ -22,13 +16,42 @@ $(".saveBtn").on("click", function (event) {
     localStorage.setItem("save", JSON.stringify(savedNotes));
 });
 
-//json string in 
-//json 
-// each jQuery to loop to go through results .each textarea 
 
-// find a way to load local storage to add to html 
+//  time blocks for past, present, and future
+// $( "hour" ).each(function( index, element ) {
+//     // element == this
+//     $( element ).css( ".present", ".past", ".future");
+//     if ( $( this ).is( "time" ) ) {
+//     }
+//   });
+
+//  for loops per time
+// present
+
+var presentTime = moment().format('LT');
+console.log(presentTime)
+$(".present").addClass("time"); 
+
+// for (let i = 0; i < presentTime.length; i++) {
+//     console.log( presentTime[i]);
+
+// past 
+var pastTime = moment().format('LT');
+console.log(pastTime)
+$(".past").addClass("time"); 
+
+// future
+var futureTime = moment().format('LT');
+console.log(pastTime)
+$(".future").addClass("time"); 
 
 
-// use localStorage.getItem, put text into HTML (make sure javascript.js always does this via a function, make sure you call it)
+// }
+// for (let i = 0; i < pastTime.length; i++) {
+//     console.log( presentTime[i]);
+// }
+// for (let i = 0; i < futureTime.length; i++) {
+//     console.log( presentTime[i]);
+// }
 
-
+// call localStorage and save once refreshed
