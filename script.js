@@ -23,7 +23,7 @@ $(document).ready(function () {
     
         };
 
-// save to local storage
+// save to local storage and save when refreshed
 $(".saveBtn").on("click", function (event) {
     event.preventDefault();
 
@@ -34,13 +34,23 @@ $(".saveBtn").on("click", function (event) {
 });
 
 
+$("input").each(function () {
+    var selectTextarea = parseInt($(this).attr("id"));
+    console.log(selectTextarea)
 
+    if (selectTextarea > currentTime) {
+        $(this).addClass("future")
 
-// present
+    } else if (selectTextarea == currentTime) {
 
-var presentTime = moment().format('LT');
-console.log(presentTime)
+        $(this).addClass("present")
 
+    }
+    else {
+        $(this).addClass("past")
 
-// time blocks for past, present, and future
-// link to CSS to color code 
+    };
+
+    $("#" + selectTextarea).val(localStorage.getItem(selectTextarea))
+
+});
