@@ -22,9 +22,17 @@ $(document).ready(function () {
             }, 1000);
     
         };
-    
 
 // save to local storage
+$(".saveBtn").on("click", function (event) {
+    event.preventDefault();
+
+    var userInfo = $(this).prev().val();
+    console.log(userInfo)
+    localStorage.setItem($(this).prev().attr("id"), userInfo)
+
+});
+
 
 
 
