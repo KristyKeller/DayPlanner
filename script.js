@@ -1,5 +1,5 @@
 
-// //get current day and time; link to inner HTML
+// Get current day and time; link to inner HTML
 
 var today = moment().format('LLL');
 $("#currentDay").text(today);
@@ -7,7 +7,7 @@ $("#currentDay").text(today);
 var presentTime = moment().format('HH');
 console.log(presentTime)
 
-// save to local storage on click
+// Save to local storage on click
 var savedNotes = [];
 
 $(".saveBtn").on("click", function (event) {
@@ -16,14 +16,28 @@ $(".saveBtn").on("click", function (event) {
 
     var textArea = $(this).prev().val();
     console.log(textArea)
-    localStorage.setItem($(this).prev().attr("id"), text)
+    localStorage.setItem($(this).prev().attr("id"), textArea)
 });
 
+// Adding time block that links to CSS coloring for past, present, and future
 
-// //  time blocks for past, present, and future
-// $( ".hour" ).each(function( index ) {
-//     console.log(savedNotes[i])
-//   });
+$("input").each(function () {
+    var selectedTime = parseInt($(this).attr("id"));
+    console.log(selectedTime)
 
-// present
+    if (selectedTime > presentTime) {
+        $(this).addClass("future")
 
+    } else if (selectedTime == presentTime) {
+
+        $(this).addClass("present")
+
+    }
+    else {
+        $(this).addClass("past")
+
+    };
+
+    $("#" + selectedTime).val(localStorage.getItem(selectedTime))
+
+});
