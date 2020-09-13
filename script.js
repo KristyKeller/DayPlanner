@@ -1,13 +1,13 @@
 
-// //get current day link to inner HTML to show on top of screen
+// get current day and time; link to inner HTML
 
 var today = moment().format('LLL');
 $("#currentDay").text(today);
 
+var presentTime = moment().format('HH');
+console.log(presentTime)
 
 // save to local storage
-var savedNotes = [];
-
 $(".saveBtn").on("click", function (event) {
     event.preventDefault();
     console.log("save");
@@ -23,12 +23,5 @@ $(".saveBtn").on("click", function (event) {
 });
 
 
-// //  time blocks for past, present, and future
-// $( ".hour" ).each(function( index ) {
-//     console.log(savedNotes[i])
-//   });
-
-// present
-
-var presentTime = moment().format('LT');
-console.log(presentTime)
+// time blocks for past, present, and future
+// link to CSS to color code 
