@@ -1,26 +1,37 @@
 
 // get current day and time; link to inner HTML
-
+// header date 
 var today = moment().format('LLL');
 $("#currentDay").text(today);
 
-var presentTime = moment().format('HH');
-console.log(presentTime)
+// internal time
+var currentTime = moment().format('HH');
+console.log(currentTime)
+
+$(document).ready(function () {
+
+    $(document).ready(function () {
+
+//  time updates
+        updateTime();
+        function updateTime() {
+            $("#currentDay").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    
+            setInterval(function () {
+                updateTime();
+            }, 1000);
+    
+        };
+    
 
 // save to local storage
-$(".saveBtn").on("click", function (event) {
-    event.preventDefault();
-    console.log("save");
-    var textArea = $(this).parent().find("textarea.textarea").val()
-    var textAreaKey = $(this).parent().find("textarea.textarea").attr("id")
-
-     savedNotes = {};
-    savedNotes[textAreaKey] = textArea
-    console.log(savedNotes)
 
 
-    localStorage.setItem("save", JSON.stringify(savedNotes));
-});
+
+// present
+
+var presentTime = moment().format('LT');
+console.log(presentTime)
 
 
 // time blocks for past, present, and future
