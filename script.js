@@ -4,24 +4,9 @@
 var today = moment().format('LLL');
 $("#currentDay").text(today);
 
-// internal time
-var currentTime = moment().format('HH');
-console.log(currentTime)
-
-$(document).ready(function () {
-
-    $(document).ready(function () {
-
-//  time updates
-        updateTime();
-        function updateTime() {
-            $("#currentDay").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
-    
-            setInterval(function () {
-                updateTime();
-            }, 1000);
-    
-        };
+// Local time
+var localTime = moment().format('HH');
+console.log(localTime)
 
 // save to local storage and save when refreshed
 $(".saveBtn").on("click", function (event) {
@@ -33,24 +18,23 @@ $(".saveBtn").on("click", function (event) {
 
 });
 
+// time blocks for past, present, and future time
+// change colors based on local time
+   $("input").each(function () {
+        var selectedInput = parseInt($(this).attr("id"));
 
-$("input").each(function () {
-    var selectTextarea = parseInt($(this).attr("id"));
-    console.log(selectTextarea)
+        if (selectedInput > localTime) {
+            $(this).addClass("future")
 
-    if (selectTextarea > currentTime) {
-        $(this).addClass("future")
+        } else if (selectedInput == localTime) {
 
-    } else if (selectTextarea == currentTime) {
+            $(this).addClass("present")
 
-        $(this).addClass("present")
+        }
+        else {
+            $(this).addClass("past")
 
-    }
-    else {
-        $(this).addClass("past")
+        };
 
-    };
-
-    $("#" + selectTextarea).val(localStorage.getItem(selectTextarea))
-
-});
+        $("#" + selectedInput).val(localStorage.getItem(selectedInput))
+    });
