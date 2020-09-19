@@ -1,4 +1,4 @@
-# Day Planner
+# 🗓  Day Planner
 
 ### [CLICK HERE TO VIEW LIVE SITE]( https://kristykeller.github.io/day-planner/)
 
