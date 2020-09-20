@@ -17,7 +17,7 @@ Work day planner developed to create a schedule based on standard business hours
 ![day planner](https://media.giphy.com/media/IzQOg5GVnGEe7ON0PY/giphy.gif)
 
 ## Screenshot
-![planner](./Assets/Images/day-planner.png)
+![planner](./Assets/Images/day-planner.jpeg)
 
 ## Built With
 * Moment.js
